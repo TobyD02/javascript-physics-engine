@@ -8,7 +8,6 @@ canvas.height = 500;
 
 
 // Declare objects
-x = new Object(10, 10, 50, true);
 
 
 function draw(){
@@ -17,7 +16,8 @@ function draw(){
 
     // Draw elements
 
-    x.update();
+    let a = new Square(0, 0, 50, true);
+    console.log(a.x);
 
     // Outline of canvas
     ctx.lineWidth = 5;
@@ -25,4 +25,4 @@ function draw(){
 }
 
 
-setInterval(draw, 5);
+setInterval(draw, 100);

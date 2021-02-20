@@ -1,15 +1,14 @@
 class Object {
-    constructor(x, y, size, physics, type){
+    constructor(x, y, size, physics){
 
         // Set parameters to field variables
         this.x = x;
         this.y = y;
         this.size = size;
         this.physics = physics;
-        this.type = type;
 
         // Set physics variables
-        this.gravity = 0.05;
+        this.gravity = 0;
         this.velX = 0;
         this.velY = 0;
         this.accX = 0;
@@ -36,12 +35,16 @@ class Object {
         this.velY += this.accY;
 
         // Handle Collisions
-        for (let collider in colliders){
+        /*
+        for (let col in colliders) {
             // Look through array of collidables and check if collides
-            if (collide(collider)){
-                // Do something
+            if (col !== this) {
+                if (this.collide(col)) {
+                    // Do something
+                }
             }
         }
+        */
 
         // Move
         this.x += this.velX;
@@ -62,21 +65,24 @@ class Object {
             this.velY = 5;
         }
 
-
-
-        // Draw object to screen
-        draw()
     }
 
     collide(col){
         // Handled by child
+        console.log(col);
     }
 
 }
 
 class Square extends Object{
-    constructor() {
-        super();
+    constructor(x, y, size, physics) {
+        super(x, y, size, physics);
+        this.type = 'square';
+    }
+
+    update(colliders){
+        super.update(colliders);
+        this.draw();
     }
 
     collide(col){
