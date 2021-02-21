@@ -8,8 +8,8 @@ class Object {
         this.physics = physics;
 
         // Set physics variables
-        this.gravity = 0;
-        this.velX = 0;
+        this.gravity = 0.1;
+        this.velX = 1;
         this.velY = 0;
         this.accX = 0;
         this.accY = 0;
@@ -65,6 +65,8 @@ class Object {
             this.velY = 5;
         }
 
+        this.draw();
+
     }
 
     collide(col){
@@ -82,7 +84,6 @@ class Square extends Object{
 
     update(colliders){
         super.update(colliders);
-        this.draw();
     }
 
     collide(col){
@@ -101,8 +102,6 @@ class Square extends Object{
 
             // Find area contained in square
             // Check that this doesn't overlap with circle
-
-
 
         }
 

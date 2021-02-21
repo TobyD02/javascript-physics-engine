@@ -16,8 +16,9 @@ function draw(){
 
     // Draw elements
 
-    let a = new Square(0, 0, 50, true);
-    console.log(a.x);
+    let a = new Square(10, 10, 20, true);
+    a.update([]);
+
 
     // Outline of canvas
     ctx.lineWidth = 5;
