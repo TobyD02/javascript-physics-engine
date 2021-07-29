@@ -24,11 +24,13 @@ class Circle {
 
     collidingUnoptimised(c){
         let r = this.radius + c.radius
-        return (r < this.position.distance(c.position))
+        console.log(this.pos.distance(c.pos), r)
+        return (r > this.pos.distance(c.pos))
     }
 
     collidingOptimised(c){
-        let r = math.pow(this.radius + c.radius, 2)
-        return (r < (Math.pow((this.x - v.x), 2) + Math.pow((this.y - v.y), 2)))
+        let r = this.radius + c.radius
+        r = r * r
+        return (r < (Math.pow((this.pos.x + c.pos.x), 2 ) + Math.pow((this.pos.y + c.pos.y), 2)))
     }
-}
+}   
