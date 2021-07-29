@@ -13,3 +13,22 @@ class AABB{
         return true
     }
 }
+
+// Circle
+
+class Circle {
+    constructor(radius, position){
+        this.radius = radius
+        this.pos = position
+    }
+
+    collidingUnoptimised(c){
+        let r = this.radius + c.radius
+        return (r < this.position.distance(c.position))
+    }
+
+    collidingOptimised(c){
+        let r = math.pow(this.radius + c.radius, 2)
+        return (r < (Math.pow((this.x - v.x), 2) + Math.pow((this.y - v.y), 2)))
+    }
+}
