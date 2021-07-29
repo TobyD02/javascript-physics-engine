@@ -16,4 +16,8 @@ class Vector2 {
         return (Math.sqrt(Math.pow(this.x, 2), Math.pow(this.y, 2)))
     }
 
+    midpoint(v){
+        return (new Vector2((this.x + v.x) / 2), (this.y + v.y) / 2)
+    }
+
 }
