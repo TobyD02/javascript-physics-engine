@@ -12,8 +12,8 @@ class Vector2 {
         return (new Vector2(this.x - v.x, this.y - v.y))
     }
 
-    sizeof(){
-        return (Math.sqrt(Math.pow(this.x, 2), Math.pow(this.y, 2)))
+    distance(v){
+        return (Math.sqrt(Math.pow((this.x - v.x), 2) + Math.pow((this.y - v.y), 2)))
     }
 
     midpoint(v){
