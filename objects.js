@@ -33,4 +33,12 @@ class Circle {
         r = r * r
         return (r < (Math.pow((this.pos.x + c.pos.x), 2 ) + Math.pow((this.pos.y + c.pos.y), 2)))
     }
+
+    getNormal(c){
+        return (c.pos.subtract(this.pos))
+    }
+
+    setVelocity(v){
+        this.velocity = velocity
+    }
 }   
