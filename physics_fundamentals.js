@@ -30,4 +30,9 @@ class Vector2 {
         return (new Vector2(this.x * s, this.y * s))
     }
 
+    invert(){
+        this.x = -this.x
+        this.y = -this.y
+    }
+
 }
