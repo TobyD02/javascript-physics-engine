@@ -5,11 +5,13 @@ class Vector2 {
     }
 
     add(v){
-        return (new Vector2(this.x + v.x, this.y + v.y))
+        this.x + v.x
+        this.y + v.y
     }
 
     subtract(v){
-        return (new Vector2(this.x - v.x, this.y - v.y))
+        this.x - v.x
+        this.y - v.y
     }
 
     distance(v){
@@ -18,6 +20,14 @@ class Vector2 {
 
     midpoint(v){
         return (new Vector2((this.x + v.x) / 2), (this.y + v.y) / 2)
+    }
+
+    dotProduct(v){
+        return (this.x * v.x + this.y * v.y)
+    }
+
+    multiplyByScalar(s){
+        return (new Vector2(this.x * s, this.y * s))
     }
 
 }
