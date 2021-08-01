@@ -62,11 +62,14 @@ class Square{
             new Vector2(origin.x, origin.y + this.size)
         ]
 
+        this.centre = new Vector2(this.origin.x + size / 2, this.origin.y + size / 2)
+
         this.maxSpeed = 5
-        this.acceleration = new Vector2(10, 5)
+        this.acceleration = new Vector2(0, 0)
         this.velocity = new Vector2(0, 0)
 
         this.friction = 0.01
+
 
     }
 
@@ -115,4 +118,28 @@ class Square{
         if (this.acceleration.magnitude() < 0.1) this.acceleration = new Vector2(0, 0)
     }
 
+    rotate(angle){
+
+        let s = Math.sin(angle);
+        let c = Math.cos(angle);
+
+        for (let i = 0; i < this.coords.length; i++){
+
+            let p = this.coords[i]
+
+            // translate point back to origin:
+            p.x -= this.centre.x;
+            p.y -= this.centre.y;
+
+            // rotate point
+            let xnew = p.x * c - p.y * s;
+            let ynew = p.x * s + p.y * c;
+
+            // translate point back:
+            p.x = xnew + this.centre.x;
+            p.y = ynew + this.centre.y;
+            
+            this.coords[i] = p
+        }
+    }
 }
